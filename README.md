@@ -3,4 +3,4 @@ A repository that demonstrates my frontend coding skills in a single personal pr
 
 ## Live site preview
 
- Click ![here](https://josh-adey.github.io/my_portfolio/)
+ Click [here](https://josh-adey.github.io/my_portfolio/)
