@@ -2,6 +2,7 @@ const sections = document.querySelectorAll(".section");
 const sectBtns = document.querySelectorAll("controlls");
 const sectBtn = document.querySelectorAll(".control");
 const allSections = document.querySelector(".main-content");
+const themeBtn = document.querySelector('.theme-btn');
 
 function pageTransitions(){
     //Button click active class
@@ -12,7 +13,6 @@ function pageTransitions(){
             this.className += "active-btn";
         })
     }
-}
 
 
 // sections active class
@@ -36,5 +36,12 @@ allSections.addEventListener('click', (e) => {
 
     }
 })
+
+}
+// Toggle theme
+themeBtn.addEventListener('click', () =>{
+   let element = document.body;
+   element.classList.toggle('light-mode');
+}) 
 
 pageTransitions();
