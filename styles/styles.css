@@ -25,7 +25,7 @@
 .light-mode {
   --color-primary: #FFFFFF;
   --color-secondary: #a1776a;
-  --color-white: #454e56;
+  --color-white: #545645;
   --color-black: #000;
   --color-grey0: #f8f8f8;
   --color-grey-1: #6c7983;
@@ -149,6 +149,7 @@ section {
 }
 
 .theme-btn {
+  padding: 2rem;
   top: 5%;
   right: 3%;
   width: 70px;
@@ -628,6 +629,17 @@ section {
   display: flex;
   justify-content: flex-start;
 }
+.contact-content-con .right-contact .submit-btn button {
+  border-radius: 30px;
+  font-weight: 900;
+  position: relative;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
 
 /*independent component*/
 .btn-container {
@@ -762,6 +774,9 @@ section {
   }
   .contact-item .icon {
     grid-template-columns: 25px 1fr;
+  }
+  .input-control {
+    font-size: 1rem;
   }
   .main-title h2 {
     font-size: 2rem;
