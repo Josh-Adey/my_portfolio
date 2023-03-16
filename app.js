@@ -3,6 +3,7 @@ const sectBtns = document.querySelectorAll("controlls");
 const sectBtn = document.querySelectorAll(".control");
 const allSections = document.querySelector(".main-content");
 const themeBtn = document.querySelector('.theme-btn');
+const form = document.querySelector('.contact-form');
 const serviceID = "service_svfwwqi";
 const templateID = "template_re06w3s";
 
@@ -49,24 +50,19 @@ themeBtn.addEventListener('click', () =>{
 pageTransitions();
 
 
-function sendEmail(){
-    var inputs = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        // subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
-
-    };
+function sendEmail(e){
+    e.preventDefault();
+    Email.send({
+        SecureToken : "eb695443-71b5-4467-9083-19d7fdd260ac",
+        To : 'robertjoshua905@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById("subject").value,
+        Body : document.getElementById("message").value
+    }).then(
+      message => alert(message)
+    );
     
-    emailjs.send(serviceID, templateID, inputs)
-.then(
-    res =>{
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        // document.getElementById("subject").value = "";
-        document.getElementById("message").value = "",
-        console.log(res);
-        alert("Your message sent successfully");
-    })
-.catch((err) => console.log(err));
 }
+
+/// add the event listener for submit
+form.addEventListener('submit', sendEmail);
